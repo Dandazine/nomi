@@ -1,0 +1,174 @@
+@use "variables.scss" as *;
+
+nav {
+  justify-self: end;
+  flex: 1 1 auto;
+  text-align: end;
+  background-color: $black;
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      width: 100%;
+      height: 5rem;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      &:hover {
+        background-color: rgb(34, 34, 34);
+      }
+    }
+  }
+  a {
+    color: $white;
+    &:visited,
+    &:link,
+    &:active,
+    &:focus {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+@media (min-width: $small) {
+  nav {
+    width: 30%;
+    border-left: 1px solid $primary-blue;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-left: 25px;
+    ul {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      li {
+        display: unset;
+        height: auto;
+        width: auto;
+        padding: 1rem 0;
+        font-size: 1rem;
+        &:hover {
+          background-color: $black;
+        }
+      }
+    }
+    .highlighted {
+      border-bottom: 2px solid $primary-blue;
+    }
+  }
+}
+
+@media (min-width: $large) {
+  nav ul {
+    width: 90%;
+  }
+}
+
+.search {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 0.5rem;
+  input {
+    display: none;
+  }
+  button {
+    display: none;
+  }
+
+  .search-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: $white;
+  }
+}
+.mobile-search {
+  display: block;
+}
+
+@media (min-width: $small) {
+  .search {
+    flex: 0;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    input {
+      display: inline;
+      width: 8rem;
+      background-color: $black;
+      border: none;
+      border: 1px solid $white;
+      border-radius: 5px;
+      color: $white;
+      text-align: end;
+      padding: 0.25rem 1rem;
+      padding-left: 1.5rem;
+
+      &:focus {
+        text-align: start;
+        padding-left: 2rem;
+      }
+    }
+    button {
+      display: inline;
+      border: none;
+    }
+    .search-icon {
+      position: absolute;
+      top: 0.15rem;
+      right: 6.7rem;
+    }
+  }
+}
+.mobile-menu {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-end;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+  }
+}
+.user {
+  width: 3rem;
+  cursor: pointer;
+  img {
+    border-radius: 50%;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: $medium) {
+  .search {
+    flex: 1 1 auto;
+  }
+}
+.false form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  input {
+    background-color: #333;
+    color: whitesmoke;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    padding: 0 1rem;
+  }
+  button {
+    background-color: #333;
+    align-self: center;
+    border: none;
+    outline: none;
+    border-radius: 10px 0 0 10px;
+    padding: 0 1rem;
+    height: 100%;
+    svg {
+      margin-top: 0.2rem;
+    }
+  }
+}

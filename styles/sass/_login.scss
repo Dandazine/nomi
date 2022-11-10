@@ -1,0 +1,74 @@
+@use "variables.scss" as *;
+
+main.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .login-header {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  p {
+    padding: 2rem;
+  }
+}
+
+.login-button {
+  margin: 1rem;
+  background-color: #333;
+  width: 16rem;
+  justify-content: space-between;
+  &:hover {
+    background-color: rgb(71, 69, 69);
+  }
+  &:active {
+    background-color: rgb(71, 69, 69);
+  }
+}
+
+@media (min-width: $small) {
+  .login-header {
+    font-size: 2rem;
+  }
+
+  .login-button {
+    width: 25rem;
+  }
+}
+
+@media (min-width: $medium) {
+}
+
+@media (min-width: $large) {
+}
+
+.login-providers {
+  height: calc(100vh - 5rem);
+  display: grid;
+  place-items: center;
+  .provider-icon {
+    color: white;
+    width: 5rem;
+    height: 5rem;
+    outline: 2px solid $primary-blue;
+    border-radius: 50%;
+  }
+  .provider {
+    display: flex;
+    flex-wrap: wrap;
+    width: 10rem;
+    justify-content: center;
+    button {
+      cursor: pointer;
+      margin-top: 2rem;
+      background-color: #333;
+      border: none;
+      border-radius: 15px;
+      height: 4rem;
+      padding: 1rem;
+      color: white;
+    }
+  }
+}
